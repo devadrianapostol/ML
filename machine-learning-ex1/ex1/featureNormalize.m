@@ -24,20 +24,22 @@ sigma = zeros(1, size(X, 2));
 %               each feature. 
 %
 % Hint: You might find the 'mean' and 'std' functions useful.
-%       
+mu = mean(X);
+sigma=std(X);
+%for i=1:rows(X)
+%  for j=1:columns(X)
+     %X_norm(i,j) = ( X(i,j) - mu(1,j) ) / sigma(1,j); 
+%    if(X_norm(i,j) ~= 0)
+%      X_norm(i,j) = X_norm(i,j) \ sigma(:,j);
+%    endif
+    
+    %printf("X(%d,%d) = %f\t X_norm(%d,%d)= %f\n",i,j, X(i,j),i,j, X_norm(i,j))
+    %X_norm(i,j) = X_norm(i,j) \ sigma(:,j);
+%  endfor
+%endfor
 
-for i=1:columns(X)
-  %stdH = std(X(:,i));
-  %disp(X(:,i))
-endfor
-
-
-
-
-
-
-
+t=ones(length(X),1);
+X_norm = (X - (t * mu)) ./ (t * sigma); % Vectorized
 
 % ============================================================
-
 end
