@@ -40,6 +40,5 @@ sigma=std(X);
 
 t=ones(length(X),1);
 X_norm = (X - (t * mu)) ./ (t * sigma); % Vectorized
-
 % ============================================================
 end
